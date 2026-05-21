@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Overlap/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overlap</title>
+    <script type="module" crossorigin src="/Overlap/assets/index-BtdhhcPP.js"></script>
+    <link rel="stylesheet" crossorigin href="/Overlap/assets/index-DIn3QwhF.css">
+  </head>
+  <body>
+    <div id="app">
+      <div class="top-bar">
+        <div class="lang-toggle" role="group" aria-label="Language">
+          <button type="button" id="lang-en" class="lang-btn" data-i18n-aria="langEn" title="English">
+            <svg class="flag-icon" viewBox="0 0 60 40" aria-hidden="true">
+              <rect width="60" height="40" fill="#012169"/>
+              <path d="M0 0l60 40M60 0L0 40" stroke="#fff" stroke-width="8"/>
+              <path d="M0 0l60 40M60 0L0 40" stroke="#C8102E" stroke-width="5"/>
+              <path d="M30 0v40M0 20h60" stroke="#fff" stroke-width="12"/>
+              <path d="M30 0v40M0 20h60" stroke="#C8102E" stroke-width="7"/>
+            </svg>
+          </button>
+          <button type="button" id="lang-sv" class="lang-btn" data-i18n-aria="langSv" title="Svenska">
+            <svg class="flag-icon" viewBox="0 0 60 40" aria-hidden="true">
+              <rect width="60" height="40" fill="#006AA7"/>
+              <rect x="16" width="8" height="40" fill="#FECC00"/>
+              <rect y="16" width="60" height="8" fill="#FECC00"/>
+            </svg>
+          </button>
+        </div>
+        <nav class="top-nav">
+          <button type="button" id="nav-help" class="link-btn" data-i18n="howItWorks">How it works</button>
+        </nav>
+      </div>
+
+      <section id="view-main">
+        <header class="header">
+          <h1 data-i18n="appTitle">Overlap</h1>
+          <p class="subtitle" data-i18n="subtitle">
+            Paste an ICS URL or upload a file. Add a second calendar to compare availability.
+          </p>
+        </header>
+
+        <section class="inputs">
+          <div class="cal-input" data-cal="1">
+            <h2><span data-i18n="calendar1">Calendar 1</span></h2>
+            <label>
+              <span data-i18n="url">URL</span>
+              <input type="text" class="url-input" data-i18n-placeholder="urlPlaceholder" placeholder="webcal://app.quinyx.com/webcal/?id=…" />
+            </label>
+            <label>
+              <span data-i18n="file">File</span>
+              <input type="file" class="file-input" accept=".ics,text/calendar" />
+            </label>
+            <div class="input-actions">
+              <button type="button" class="load-btn" data-i18n="load">Load</button>
+            </div>
+          </div>
+
+          <div class="cal-input" data-cal="2">
+            <h2>
+              <span data-i18n="calendar2">Calendar 2</span>
+              <span class="optional" data-i18n="optional">(optional)</span>
+            </h2>
+            <label>
+              <span data-i18n="url">URL</span>
+              <input type="text" class="url-input" data-i18n-placeholder="urlPlaceholder" placeholder="webcal://app.quinyx.com/webcal/?id=…" />
+            </label>
+            <label>
+              <span data-i18n="file">File</span>
+              <input type="file" class="file-input" accept=".ics,text/calendar" />
+            </label>
+            <div class="input-actions">
+              <button type="button" class="load-btn" data-i18n="load">Load</button>
+            </div>
+          </div>
+        </section>
+
+        <p id="status" class="status" role="status"></p>
+
+        <section class="period-nav">
+          <div class="view-toggle" role="group" data-i18n-aria="viewMode">
+            <button type="button" id="view-week" class="view-btn active" aria-pressed="true" data-i18n="week">Week</button>
+            <button type="button" id="view-month" class="view-btn" aria-pressed="false" data-i18n="month">Month</button>
+          </div>
+          <div class="period-controls">
+            <button type="button" id="prev-period" data-i18n="prevWeek">Previous week</button>
+            <button type="button" id="today-period" data-i18n="today">Today</button>
+            <button type="button" id="next-period" data-i18n="nextWeek">Next week</button>
+            <span id="period-label" class="period-label"></span>
+          </div>
+        </section>
+
+        <div id="legend" class="legend"></div>
+        <div id="grid-container" class="grid-container"></div>
+      </section>
+
+      <section id="view-help" class="help-page" hidden>
+        <header class="header">
+          <h1 data-i18n="helpTitle">How it works</h1>
+        </header>
+        <article class="help-content">
+          <p class="help-lead" data-i18n="helpIntro"></p>
+
+          <h2 data-i18n="helpStep1Title"></h2>
+          <p data-i18n="helpStep1"></p>
+
+          <h2 data-i18n="helpStep2Title"></h2>
+          <p data-i18n="helpStep2"></p>
+
+          <h2 data-i18n="helpStep3Title"></h2>
+          <p data-i18n="helpStep3"></p>
+
+          <h2 data-i18n="helpStep4Title"></h2>
+          <p data-i18n="helpStep4"></p>
+
+          <div class="help-privacy">
+            <h2 data-i18n="helpPrivacyTitle"></h2>
+            <p data-i18n="helpPrivacy"></p>
+          </div>
+
+          <h2 data-i18n="helpLegendTitle"></h2>
+          <ul class="help-legend-list">
+            <li><span class="swatch both-free"></span> <span data-i18n="bothFree"></span></li>
+            <li><span class="swatch only2-busy"></span> <span data-i18n="only2Busy"></span></li>
+            <li><span class="swatch only1-busy"></span> <span data-i18n="only1Busy"></span></li>
+            <li><span class="swatch both-busy"></span> <span data-i18n="bothBusy"></span></li>
+            <li><span class="swatch mutual-free-day-swatch"></span> <span data-i18n="mutualFreeDay"></span></li>
+          </ul>
+        </article>
+        <button type="button" id="nav-back" class="load-btn" data-i18n="backToCalendar">Back to calendar</button>
+      </section>
+    </div>
+  </body>
+</html>

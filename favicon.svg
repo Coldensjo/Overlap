@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="Overlap">
+  <rect width="32" height="32" rx="6" fill="#1a1f2e"/>
+  <rect x="6" y="8" width="14" height="16" rx="2" fill="#3d7ab8" opacity="0.9"/>
+  <rect x="12" y="8" width="14" height="16" rx="2" fill="#2d8a5e" opacity="0.85"/>
+</svg>
