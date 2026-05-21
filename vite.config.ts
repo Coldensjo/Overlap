@@ -14,6 +14,10 @@ function icsProxyPlugin(): Plugin {
   };
 }
 
-export default defineConfig({
+/** GitHub Project Pages: https://<user>.github.io/<repo>/ */
+const GITHUB_PAGES_BASE = '/Overlap/';
+
+export default defineConfig(({ mode }) => ({
+  base: mode === 'pages' ? GITHUB_PAGES_BASE : '/',
   plugins: [icsProxyPlugin()],
-});
+}));

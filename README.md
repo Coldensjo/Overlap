@@ -83,6 +83,27 @@ npm run start
 
 Or `npm run preview` for a quick preview. Static files are in `dist/`. Use `npm start` for production-like serving with the calendar URL proxy.
 
+## GitHub Pages
+
+The repo includes a workflow that deploys to GitHub Pages on every push to `main`.
+
+1. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+2. Push to `main`; the **Deploy to GitHub Pages** workflow publishes `dist/`.
+3. Open **https://coldensjo.github.io/Overlap/** (project site for repo `Overlap`).
+
+**On GitHub Pages:**
+
+- **File upload** works fully (recommended).
+- **URL / webcal loading** does not use the ICS proxy (Pages is static only). Quinyx and similar feeds usually fail with CORS — download the `.ics` and upload it instead.
+
+To build locally the same way as CI:
+
+```bash
+npm run build:pages
+```
+
+If you rename the repository, update `GITHUB_PAGES_BASE` in `vite.config.ts` to match (`/<repo-name>/`).
+
 ## License
 
 [MIT](LICENSE)
