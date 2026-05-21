@@ -85,11 +85,20 @@ Or `npm run preview` for a quick preview. Static files are in `dist/`. Use `npm 
 
 ## GitHub Pages
 
-The repo includes a workflow that deploys to GitHub Pages on every push to `main`.
+The **Deploy to GitHub Pages** workflow builds the app and pushes only `dist/` to the `gh-pages` branch on every push to `main`.
 
-1. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-2. Push to `main`; the **Deploy to GitHub Pages** workflow publishes `dist/`.
-3. Open **https://coldensjo.github.io/Overlap/** (project site for repo `Overlap`).
+### One-time setup
+
+1. **Settings → Pages → Build and deployment**
+2. **Source:** Deploy from a branch
+3. **Branch:** `gh-pages` / **Folder:** `/ (root)`
+4. Save, then push to `main` (or run the workflow manually under **Actions**).
+
+Site URL: **https://coldensjo.github.io/Overlap/**
+
+### Troubleshooting
+
+If the page loads but the calendar grid is empty, and the browser console shows a failed request to `/src/main.ts`, Pages is still serving the **source** repo (e.g. branch `main` / root) instead of the built site. Switch the Pages source to the **`gh-pages`** branch as above and re-run the deploy workflow.
 
 **On GitHub Pages:**
 
