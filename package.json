@@ -1,0 +1,25 @@
+{
+  "name": "overlap",
+  "version": "1.0.0",
+  "description": "Compare one or two ICS calendars on a week or month grid",
+  "type": "module",
+  "license": "MIT",
+  "keywords": ["ics", "calendar", "availability", "quinyx", "schedule"],
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "start": "tsx server/index.ts"
+  },
+  "devDependencies": {
+    "@types/luxon": "^3.7.1",
+    "@types/node": "^22.15.29",
+    "tsx": "^4.19.4",
+    "typescript": "~6.0.2",
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "ical.js": "^2.2.1",
+    "luxon": "^3.7.2"
+  }
+}
